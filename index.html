@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Serwis</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <!-- Dopisz klasy Bootstrapa. Nie dodawaj elementów. Nie zmieniaj tekstów, id ani skryptu. -->
+
+    <section id="zgloszenie">
+      <div>
+        <h2>Zgłoszenie</h2>
+        <form novalidate>
+          <div>
+            <div>
+              <label for="telefon">Telefon</label>
+              <input type="tel" id="telefon" required />
+              <div>Podaj telefon</div>
+            </div>
+            <div>
+              <label for="email">E-mail</label>
+              <input type="email" id="email" required />
+              <div>Podaj e-mail</div>
+            </div>
+          </div>
+          <div>
+            <label for="urzadzenie">Urządzenie</label>
+            <input type="text" id="urzadzenie" required />
+            <div>Podaj urządzenie</div>
+          </div>
+          <div>
+            <label for="usterka">Usterka</label>
+            <select id="usterka" required>
+              <option value="" selected disabled>Wybierz usterkę</option>
+              <option value="ekran">Ekran</option>
+              <option value="bateria">Bateria</option>
+              <option value="zalanie">Zalanie</option>
+            </select>
+            <div>Wybierz usterkę</div>
+          </div>
+          <div>
+            <input type="checkbox" id="gwarancja" required />
+            <label for="gwarancja">Mam gwarancję</label>
+            <div>Zaznacz gwarancję</div>
+          </div>
+          <div>
+            <input type="checkbox" id="oddzwon" />
+            <label for="oddzwon">Oddzwoń do mnie</label>
+          </div>
+          <button type="submit">Wyślij</button>
+          <button type="button">Wstecz</button>
+          <button type="button">Anuluj</button>
+        </form>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      (() => {
+        document.querySelectorAll(".needs-validation").forEach((form) => {
+          form.addEventListener("submit", (event) => {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
